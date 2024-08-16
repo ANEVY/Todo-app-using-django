@@ -12,7 +12,7 @@ class Task(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     due_date = models.DateField()
-    status = models.CharField(choices=TASK_STATUS, default="PENDING")
+    status = models.CharField(max_length=15, choices=TASK_STATUS, default="PENDING")
 
     def __str__(self):
         return self.title
