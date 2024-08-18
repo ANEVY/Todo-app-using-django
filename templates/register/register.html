@@ -1,4 +1,29 @@
 {% extends "layout.html" %}
+
 {% block content %}
-    <h1>Register</h1>
+    <main class="container h-100 home">
+        <div class="row align-items-center h-100 justify-content-center">
+            <div class="login-form-wrapper">
+                <h1 class="mb-3 text-center">Register</h1>
+                <form>
+                    <div class="form-group mb-4">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                    <div class="text-center mt-3 mb-4">
+                        <h5>Already have an account? <a href="{% url 'login' %}">Login</a></h5>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 {% endblock %}

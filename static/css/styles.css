@@ -19,3 +19,13 @@ h1{
 .home img{
     border-radius: 40px;
 }
+
+.login-form-wrapper{
+    width: 400px;
+    background: #1d1813;
+    padding: 20px;
+    border-radius: 10px;
+}
+.login-form-wrapper .btn {
+    width: 100%;
+}
