@@ -5,7 +5,8 @@
         <div class="row align-items-center h-100 justify-content-center">
             <div class="login-form-wrapper">
                 <h1 class="mb-3 text-center">Login</h1>
-                <form>
+                <form method="post" action="">
+                     {% csrf_token %}
                     <div class="form-group mb-4">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" placeholder="Enter username">
