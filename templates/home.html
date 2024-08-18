@@ -1,9 +1,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Welcome</h1>
-      <p>
-        Welcome to LocalLibrary, a website developed by
-        <em>Mozilla Developer Network</em>!
-      </p>
+    <main class="container h-100 home">
+        <div class="row align-items-center h-100">
+            <div class="col-md-6 column">
+                <h1 class="mb-3">Welcome to TODOAPP.</h1>
+                <h5 class="mb-5">This is a short description of what we do. Join us to explore more.</h5>
+                <a  href="{% url 'login' %}" class="btn btn-primary btn-lg btn-login rounded-pill w-250">Login</a>
+            </div>
+            <div class="col-md-6">
+                {% load static %}
+                    <img
+                      src="{% static 'images/to-do-list-icon.jpg' %}"
+                      alt="UML diagram"
+                      class="img-fluid"/>
+            </div>
+        </div>
+    </main>
+
 {% endblock %}
