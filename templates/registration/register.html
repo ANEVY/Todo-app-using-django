@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <main class="container h-100 home">
+        <div class="row align-items-center h-100 justify-content-center">
+            <div class="login-form-wrapper">
+                <h1 class="mb-3 text-center">Register</h1>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="form-group mb-4">
+                        <label for="username">Username</label>
+                        {{form.username}}
+                        {% if form.errors.username %}
+                            <span class="error text-danger d-block">{{form.errors.username}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="email">Email</label>
+                        {{form.email}}
+                        {% if form.errors.email %}
+                            <span class="error text-danger d-block">{{form.errors.email}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="password1">Password</label>
+                        {{form.password1}}
+                        {% if form.errors.password1 %}
+                            <span class="error text-danger d-block">{{form.errors.password1}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="password2">Confirm password</label>
+                        {{form.password2}}
+                        {% if form.errors.password2 %}
+                            <span class="error text-danger d-block">{{form.errors.password2}}</span>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                    <div class="text-center mt-3 mb-4">
+                        <h5>Already have an account? <a href="{% url 'login' %}">Login</a></h5>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block script %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+         //get form fields
+	   const userName = document.querySelector("input[name='username']");
+	   const email = document.querySelector("input[name='email']");
+	   const password1 = document.querySelector("input[name='password1']");
+	   const password2 = document.querySelector("input[name='password2']");
+
+		//set placeholder
+		userName.placeholder='Username..';
+		email.placeholder='Email..';
+		password1.placeholder='Enter password...';
+		password2.placeholder='Re-enter Password...';
+
+		//set
+
+		userName.className += 'form-control';
+		email.className += ' form-control';
+		password1.className += ' form-control';
+		password2.className += ' form-control';
+    });
+</script>
+
+{% endblock %}
