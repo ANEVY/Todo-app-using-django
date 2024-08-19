@@ -12,35 +12,39 @@
       crossorigin="anonymous">
         <!-- Add additional CSS in static file -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
   </head>
   <body>
-   <div class="container-fluid">
+   <div class="container-fluid p-0">
        <div class="sidebar">
             {% block sidebar %}
-
-                    <h2>Dashboard</h2>
+                    <div>
+                     <h2>Tasks</h2>
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Home</a>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="#">All</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="#">Add New</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">About</a>
+                            <a class="nav-link text-white" href="#">In Progress</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Services</a>
+                            <a class="nav-link text-white" href="#">Completed</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item  mt-auto">
                             <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
+
                         </li>
                     </ul>
+                    </div>
+
             {% endblock %}
 
        </div>
        <div class="content">
-        {% block content %}
-          <!-- default content text (typically empty) -->
-        {% endblock %}
+        {% block content %}{% endblock %}
        </div>
    </div>
     <footer>
