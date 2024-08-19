@@ -25,5 +25,6 @@ urlpatterns = [
                   path("tasks/", include("tasks.urls")),
                   path("", tasks_views.home_page, name="home"),
                   path("login",tasks_views.login_page, name="login"),
-                  path("register",tasks_views.register_page, name="register")
+                  path("register",tasks_views.register_page, name="register"),
+                  path("logout", tasks_views.logout_page, name="logout")
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

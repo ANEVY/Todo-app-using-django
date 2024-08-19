@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 from .forms import CreateUserForm
@@ -43,5 +43,10 @@ def login_page(request):
         else:
             context["error"] = "Incorrect username or password"
     return render(request, "registration/login.html", context)
+
+
+def logout_page(request):
+    logout(request)
+    return redirect("login")
 
 # Create your views here.
