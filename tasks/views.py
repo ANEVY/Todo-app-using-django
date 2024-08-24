@@ -15,6 +15,10 @@ def view_task(request):
     return render(request, "tasks/view.html")
 
 
+def create_task(request):
+    return render(request, "tasks/new.html")
+
+
 def home_page(request):
     return render(request, "home.html")
 

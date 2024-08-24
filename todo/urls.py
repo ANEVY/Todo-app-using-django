@@ -22,7 +22,7 @@ from tasks import views as tasks_views
 
 urlpatterns = [
                   path("admin/", admin.site.urls),
-                  path("tasks/", include("tasks.urls")),
+                  path("tasks", include("tasks.urls")),
                   path("", tasks_views.home_page, name="home"),
                   path("login",tasks_views.login_page, name="login"),
                   path("register",tasks_views.register_page, name="register"),
